@@ -28,7 +28,7 @@ class App:
 
 #code for the button
     def button(self):
-        password_generator = Button(self.window, text="Generate_password",  font=('Courrier', 13), bg='white', fg='white', width=25, command=self.generate_password)
+        password_generator = Button(self.window, text="Generate_password",  font=('Courrier', 13), bg='white', fg='red', width=25, command=self.generate_password)
         password_generator.pack()
 
 #generate actual password
