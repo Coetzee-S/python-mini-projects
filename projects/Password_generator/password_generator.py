@@ -1,3 +1,4 @@
+#import what is needed
 from tkinter import*
 from random import choice
 import string
@@ -15,19 +16,22 @@ class App:
         self.label()
         self.entry()
         self.button()
-
+        
+#code the label
     def label(self):
         label_title = Label(self.window, text='Welcome to password generator', font=('Courrier', 20), bg='blue', fg='black')
         label_title.pack()
 
     def entry(self):
-        self.password_entry = Entry(self.window, font=('Courrier', 25), bg='grey', fg='black', width=35, relief='solid')
+        self.password_entry = Entry(self.window, font=('Courrier', 25), bg='grey', fg='black', width=37, relief='solid')
         self.password_entry.pack(pady=50)
 
+#code for the button
     def button(self):
-        password_generator = Button(self.window, text="Generate_password",  font=('Courrier', 13), bg='white', fg='black', width=25, command=self.generate_password)
+        password_generator = Button(self.window, text="Generate_password",  font=('Courrier', 13), bg='white', fg='white', width=25, command=self.generate_password)
         password_generator.pack()
 
+#generate actual password
     def generate_password(self):
         characters = string.ascii_letters + string.punctuation + string.digits
         password = ""
@@ -36,6 +40,6 @@ class App:
         self.password_entry.delete(0, END)
         self.password_entry.insert(0, password)
         
-#display
+#display the output
 app = App()
 app.window.mainloop()
